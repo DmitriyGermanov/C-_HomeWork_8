@@ -52,7 +52,7 @@
 
             foreach (var item in files)
             {
-                if (item.Name.Contains(extension))
+                if (item.Extension.Contains(extension))
                 {
                     list.Add(Path.Combine(item.Directory.FullName, item.Name));
                 }

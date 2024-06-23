@@ -5,7 +5,7 @@
         public Dictionary<String, List<String>> Search(string[] args)
         {
             if (args.Length < 3 || args.Length > 3)
-                throw new Exception("Программа принимает 3 аргумента: путь, расширение файла, искомый текст");
+                throw new ArgumentException("Метод Dictionary класса FindFileWithText принимает 3 аргумента: путь, расширение файла, текст для поиска");
             var findWords = new FindWordsInFile();
             var findFilesPath = new FindFile();
             var fileList = findFilesPath.Search(new string[] { args[0], args[1] });

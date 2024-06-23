@@ -8,7 +8,7 @@
                 throw new ArgumentException("Метод Dictionary класса FindFileWithText принимает 3 аргумента: путь, расширение файла, текст для поиска");
             var findWords = new FindWordsInFile();
             var findFilesPath = new FindFile();
-            var fileList = findFilesPath.Search(new string[] { args[0], args[1] });
+            var fileList = findFilesPath.SearchPath(new string[] { args[0], args[1] });
             Dictionary<String, List<String>> result = new();
 
             foreach (var item in fileList)

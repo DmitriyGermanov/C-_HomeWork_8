@@ -8,6 +8,12 @@
                 throw new ArgumentException("Метод Search класса FindFile принимает 2 аргумента: путь, имя файла");
             return SearchIn(args[0], args[1]);
         }
+        public List<String> SearchPath(string[] args)
+        {
+            if (args.Length < 2 || args.Length > 2)
+                throw new ArgumentException("Метод Search класса FindFile принимает 2 аргумента: путь, имя файла");
+            return SearchForFilesPaths(args[0], args[1]);
+        }
         private List<string> SearchIn(string path, string name)
         {
 

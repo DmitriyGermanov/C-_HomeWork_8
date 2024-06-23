@@ -34,5 +34,31 @@
             return list;
 
         }
+        private List<string> SearchForFilesPaths(string path, string extension)
+        {
+
+            var list = new List<string>();
+            if (!Directory.Exists(path))
+                throw new Exception("Директории не существует");
+            DirectoryInfo root = new DirectoryInfo(path);
+            var files = root.GetFiles();
+            var directories = root.GetDirectories();
+
+            foreach (var item in files)
+            {
+                if (item.Name.Contains(extension))
+                {
+                    list.Add(Path.Combine(item.Directory.FullName, item.Name));
+                }
+            }
+
+
+            foreach (var item in directories)
+            {
+                list.AddRange(SearchForFilesPaths(item.FullName, extension));
+            }
+            return list;
+
+        }
     }
 }

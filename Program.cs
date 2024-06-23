@@ -19,6 +19,10 @@ internal class Program
         {
             result = search.Search(args);
         }
+        catch (ArgumentException e)
+        {
+            Console.WriteLine("Введите корректное количество аргументов для запуска приложения:\nПуть для поиска, строка, текст для поиска");
+        }
         catch (Exception e)
         {
             Console.WriteLine(e.Message);
